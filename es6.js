@@ -296,3 +296,83 @@ function tagExample(strings, nameValue) {
 const result_5 = tagExample`Hello ${name_4}, How are you?`;
 
 console.log(result_5);
+
+//spread operator
+//The spread operator ... is used to expand or spread an iterable or an array.
+const arrValue = ['My', 'name', 'is', 'Jack'];
+
+console.log(arrValue);   // ["My", "name", "is", "Jack"]
+console.log(...arrValue); // My name is Jack
+
+//copy aaray using spread operator 
+const arr11 = ['one', 'two'];
+const arr12 = [...arr11, 'three', 'four', 'five'];
+
+console.log(arr12); 
+//  Output:
+//  ["one", "two", "three", "four", "five"]
+
+//clone array using spread operator
+let arr13 = [ 1, 2, 3];
+let arr14 = arr13;
+
+console.log(arr13); // [1, 2, 3]
+console.log(arr14); // [1, 2, 3]
+
+// append an item to the array
+arr13.push(4);
+
+console.log(arr13); // [1, 2, 3, 4]
+console.log(arr14); // [1, 2, 3, 4]
+
+//Spread Operator with Object
+const obj1 = { x : 1, y : 2 };
+const obj2 = { z : 3 };
+
+// add members obj1 and obj2  to obj3
+const obj3 = {...obj1, ...obj2};
+
+console.log(obj3); // {x: 1, y: 2, z: 3}
+
+//Rest Parameter
+//When the spread operator is used as a parameter, it is known as the rest parameter.
+let func = function(...args) {
+    console.log(args);
+}
+
+func(3); // [3]
+func(4, 5, 6); // [4, 5, 6]
+
+//JS Map
+
+// create a Map
+const map1 = new Map(); // an empty map
+console.log(map1); // Map {}
+
+//insert item to map 
+// create a set
+let map2 = new Map();
+
+// insert key-value pair
+map2.set('info', {name: 'Jack', age: 26});
+console.log(map2); // Map {"info" => {name: "Jack", age: 26}}
+
+//JS Set
+// create Set
+const set1 = new Set(); // an empty set
+console.log(set1); // Set {}
+
+// Set with multiple types of value
+const set2 = new Set([1, 'hello', {count : true}]);
+console.log(set2); // Set {1, "hello", {count: true}}
+
+// Set with duplicate values
+const set3 = new Set([1, 1, 2, 2]);
+console.log(set3); // Set {1, 2}
+
+//Access Set Elements
+const set4 = new Set([1, 2, 3]);
+
+// access the elements of a Set
+console.log(set4.values()); // Set Iterator [1, 2, 3]
+
